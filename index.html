@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDG Mail Concatenator</title>
+    <script src="duck.js" defer></script>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .verdana,
+        label {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border: solid 2px #de5833;
+            width: 650px;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #de5833;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #c44b2a;
+        }
+
+        #outputContainer {
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: #e9f5e9;
+            border-radius: 5px;
+            border: 1px solid #de5833;
+        }
+
+        #outputField {
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        .margin-40 {
+            margin: 40px 0;
+        }
+
+        label {
+            color: gray;
+            align-self: flex-start; /* Keeps labels left-aligned */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container" class="verdana">
+        <div class="logo-container">
+            <img width="250" src="ddg-logo.png"/>
+        </div>
+        <h2 class="margin-40">Tired of concatenating your DDG private address and your recipient? <br/>…well worry no more</h2>
+
+        <label>Your recipient's address:</label>
+        <input type="text" id="inputField" placeholder="Enter recipient address">
+        
+        <label>Your private duck address (taken from clipboard)</label>
+        <input type="text" id="clipboardField" placeholder="Enter your duck forwarding address">
+        
+        <button id="generateButton">Generate</button>
+        
+        <div id="outputContainer">
+            <h2 class="verdana" id="outputField">someone_at_somewhere.tld@your-private-duck@duck.com</h2>
+            <button id="copyButton">Copy</button>
+        </div>
+
+    </div>
+</body>
+</html>
